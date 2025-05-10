@@ -22,7 +22,7 @@ let data = [
 
 </template>
 
-<style>
+<style scoped>
     header {
         display: flex;
         justify-content: space-around;
