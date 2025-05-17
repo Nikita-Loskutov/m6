@@ -6,15 +6,15 @@
 
 
 <template>
-    <a>
+    <router-link :to="{ name: 'detaile', params: { id: item.id} }">
         <img :src="item.img" alt="">
         <div>
             <h1>{{item.name}}</h1>
-            <p>{{item.discription}}</p>
+            <p>{{item.disc_small}}</p>
             <p>Цвет: {{item.color}}</p>
             <p class="sell">Стоимость: {{item.price}}</p>
         </div>
-    </a>
+    </router-link>
 </template>
 
 <style scoped>
@@ -27,6 +27,7 @@
     border-radius: 30px;
     transition: all 1s;
     user-select: none;
+
  }
 
 img {
