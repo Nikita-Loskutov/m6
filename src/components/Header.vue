@@ -10,6 +10,10 @@ let data = [
     path: "/faq",
     name: "Помощь",
   },
+  {
+    path: "/admin",
+    name: "Админ",
+  },
 ];
 </script>
 
