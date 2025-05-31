@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
 
 let name = ref("");
 let disc_small = ref("");
@@ -8,6 +9,10 @@ let price = ref("");
 let discription = ref("");
 let img = ref("");
 
+
+let adminPassword = ref("");
+const correctPassword = "123";
+const isPasswordCorrect = computed(() => adminPassword.value === correctPassword);
 
 function sendItem() {
     let data = {
@@ -31,7 +36,10 @@ function sendItem() {
     price.value = "";
     discription.value = "";
     img.value = "";
+    adminPassword.value = "";
 }
+
+
 
 </script>
 
@@ -74,7 +82,11 @@ function sendItem() {
                 <p>{{disc_small}}</p>
             </div>
         </a>
-        <button class="button" type="submit">Сохранить</button>
+        <label>
+            <p>Введите пароль администратора</p>
+            <input type="password" v-model="adminPassword" placeholder="Пароль" class="pass" required />
+        </label>
+        <button class="button" type="submit" :disabled="!isPasswordCorrect">Сохранить</button>
         <p></p>
         
     </form>
@@ -82,6 +94,12 @@ function sendItem() {
 
 <style scoped>
 
+
+.pass {
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
 
 .labels label {
     display: flex;
