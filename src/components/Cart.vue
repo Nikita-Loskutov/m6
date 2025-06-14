@@ -12,7 +12,7 @@
             <h1>{{item.name}}</h1>
             <p>{{item.disc_small}}</p>
             <p>Цвет: {{item.color}}</p>
-            <p class="sell">Стоимость: {{item.price}}</p>
+            <p class="sell">Стоимость: {{item.price}}Р</p>
         </div>
     </router-link>
 </template>
